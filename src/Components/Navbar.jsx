@@ -4,8 +4,9 @@ import { LuPhone } from "react-icons/lu";
 import { MdMailOutline } from "react-icons/md";
 import { PiFacebookLogoBold } from "react-icons/pi";
 import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Navbar = () => {
   return (
     <>
       <div style={{ backgroundColor: '#00387A' }} className="text-white text-sm">
@@ -40,24 +41,24 @@ const Header = () => {
         </div>
 
         {/* Navigation Links */}
-        <ul className="flex space-x-6 text-medium font-sm">
-          <li><a href="/" className="font-bold hover:text-[#9F162E] cursor-pointer">Home</a></li>
-          <li><a href="/aboutus" className="hover:text-[#9F162E] cursor-pointer">About Us</a></li>
-          <li><a href="/courses" className="hover:text-[#9F162E] cursor-pointer">Courses</a></li>
-          <li><a href="/Studentlife" className="hover:text-[#9F162E] cursor-pointer">Student Life</a></li>
-          <li><a href="/Career" className="hover:text-[#9F162E] cursor-pointer">Career</a></li>
-          <li><a href="/Contact" className="hover:text-[#9F162E] cursor-pointer">Contact</a></li>
-          <li><a href="/projec" className="hover:text-[#9F162E] cursor-pointer">Project Hub</a></li>
-        </ul>
+      <ul className="flex space-x-6 text-medium font-sm">
+  <li><Link to="/" className="font-bold hover:text-[#9F162E] cursor-pointer">Home</Link></li>
+  <li><Link to="/about" className="hover:text-[#9F162E] cursor-pointer">About Us</Link></li>
+  <li><Link to="/course" className="hover:text-[#9F162E] cursor-pointer">Courses</Link></li>
+  <li><Link to="/student-life" className="hover:text-[#9F162E] cursor-pointer">Student Life</Link></li>
+  <li><Link to="/career" className="hover:text-[#9F162E] cursor-pointer">Career</Link></li>
+  <li><Link to="/contact" className="hover:text-[#9F162E] cursor-pointer">Contact</Link></li>
+  <li><Link to="/projecthub" className="hover:text-[#9F162E] cursor-pointer">Project Hub</Link></li>
+</ul>
 
         {/* Get Admission Button */}
         <button className="bg-[#9F162E] text-white font-semibold px-4 py-2 rounded-full hover:bg-[#7c1124] transition duration-200">
           Get Admission
         </button>
       </nav>
-     <hr className='mb-6 bg-[#8fb8e6] h-0.5'/>
+     <hr className='bg-[#8fb8e6] h-0.5'/>
     </>
   );
 };
 
-export default Header;
+export default Navbar;
