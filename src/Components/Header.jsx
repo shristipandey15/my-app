@@ -1,82 +1,57 @@
 import React from 'react';
-import principal from '../assets/sanjeev.png';
+
 import college from '../assets/nepathta.png';
-import sign from '../assets/sign.png';
-import profileImg from '../assets/about6.png'; 
+
+import profileImg from '../assets/about6.png';
+import Message from '../Components/Message.jsx'; 
 
 const Header = () => {
   return (
     <>
       {/* Welcome Section */}
-      <div className="relative x-10 flex flex-wrap px-8 py-12 font-sans bg-[#E6EBF2]">
-        {/* Text Section */}
-        <div className="w-full md:w-1/2 pr-6 mb-8 md:mb-0">
-          <p className="text-medium font-bold text-purple-800 mb-4 px-12 transition-all duration-300 ease-in-out">
-            WELCOME TO NEPATHYA
-          </p>
-          <h1 className="mb-8 px-12 transition-all duration-300 ease-in-out">
-            <span className="text-5xl block">Leaders Are</span>
-            <span className="text-5xl text-[#00387A] block">Made Not Born</span>
-          </h1>
-          <p className="text-[#00387A] mb-5 font-small px-12 leading-relaxed">
-            Nepathya College believes that people can become leaders through the process of teaching, learning, and observation.
-            Leadership is learned by training, perception, practice, and experience over time. Leadership learning is a lifetime activity.
-          </p>
+ <div
+  className="relative min-h-screen flex flex-wrap items-center px-8 py-16 font-sans bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('https://media.istockphoto.com/id/1193288605/photo/computer-and-bookshelves-in-modern-library.webp?a=1&b=1&s=612x612&w=0&k=20&c=PJVRr6Y6EAoymzI_7lb7Mky5RwQ9L7u5NMrxFTt70Hs=')" }} // replace with your image path
+>
+  {/* Overlay (optional for readability) */}
+ <div className="absolute inset-0 bg-gradient-to-r from-black/95 to-transparent z-1"></div>
 
-          <div className="px-12">
-            <button
-              onClick={() => window.location.href = '/contact'}
-              className="bg-[#9F162E] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#7c1124] hover:scale-105 transition-all duration-300 ease-in-out"
-            >
-              Contact Us
-            </button>
-          </div>
-        </div>
 
-        {/* Image Section */}
-        <div className="w-full md:w-1/2 flex justify-center items-center">
-          <img
-            src={college}
-            alt="College image"
-            className="w-4/5 rounded-xl shadow-lg transition-transform duration-500 ease-in-out hover:scale-105"
-          />
-        </div>
-      </div>
+  {/* Content */}
+  <div className="relative z-10 w-full md:w-1/2 pr-6 mb-8 md:mb-0 text-white">
+    <p className="text-medium text-[#E8B500] font-bold mb-4 px-12 transition-all duration-300 ease-in-out">
+      WELCOME TO NEPATHYA
+    </p>
+  <h1 className="mb-8 px-12">
+  <span className="block text-7xl font-bold opacity-0 animate-fade-in-down [animation-delay:.3s]">
+    Leaders Are
+  </span>
+  <span className="block text-7xl font-bold text-[#00387A] opacity-0 animate-fade-in-down [animation-delay:.9s]">
+    Made Not Born
+  </span>
+</h1>
 
-      {/* Principal Message Section */}
-      <div className="flex flex-wrap px-8 py-12 font-sans bg-white">
-        {/* Text Section */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center mb-8 md:mb-0">
-          <h1 className="text-medium font-bold text-purple-800 mb-4 transition-all duration-300 ease-in-out">
-            WELCOME TO NEPATHYA
-          </h1>
-          <h2 className="text-3xl font-semibold text-[#00387A] mb-2 transition-all duration-300 ease-in-out">
-            Message from the Principal
-          </h2>
+    <p className="mb-5 font-small text-gray-200 px-12 leading-relaxed">
+      Nepathya College believes that people can become leaders through the process of teaching, learning, and observation.
+      Leadership is learned by training, perception, practice, and experience over time. Leadership learning is a lifetime activity.
+    </p>
 
-          <p className="text-[#00387A] mb-4 transition-all duration-300 ease-in-out">
-            Nepathya College has always been committed to providing quality education and fostering an environment that nurtures intellectual growth, personal development, and a spirit of innovation. Our aim is to empower our students with knowledge, skills, and values that will enable them to become responsible global citizens and make a positive impact on society.
-          </p>
-          <p className="text-[#00387A] transition-all duration-300 ease-in-out">
-            As the Principal of Nepathya College, I am honored to lead this vibrant and dynamic academic community. I encourage all students to make the most of their time at Nepathya College, embrace opportunities for personal growth, and actively contribute to the community. Remember, your education is not just a means to an end but a transformative journey that will shape your future.
-          </p>
+    <div className="px-12">
+      <button
+        onClick={() => window.location.href = '/contact'}
+        className="bg-[#9F162E] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#7c1124] hover:scale-105 transition-all duration-300 ease-in-out"
+      >
+        Contact Us
+      </button>
+    </div>
+  </div>
+</div>
 
-          <div className="flex flex-col items-center mt-6">
-            <img src={sign} alt="Signature" className="w-40 h-auto px-10 mb-2" />
-            <span className="text-lg font-semibold text-[#00387A]">Sanjeev Bhandari</span>
-            <span className="text-sm text-gray-600">Principal</span>
-          </div>
-        </div>
 
-        {/* Image Section */}
-        <div className="w-full md:w-1/2 flex justify-center items-center">
-          <img
-            src={principal}
-            alt="Principal"
-            className="w-4/5 rounded-xl shadow-lg transition-transform duration-500 ease-in-out hover:scale-105"
-          />
-        </div>
-      </div>
+
+{/* Message from principal */}
+ <Message/>
+
       <div>
         {/* About us */}
            <div className="flex flex-col md:flex-row items-center justify-center p-8 bg-gray-50 rounded-lg w-full">

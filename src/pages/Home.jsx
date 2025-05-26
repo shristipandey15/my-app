@@ -1,7 +1,12 @@
 
 import React from 'react'
 import Course from './Course'
-import Admission from '../Components/Admission'
+import Banner from '../Components/Banner.jsx';
+import Testominal from '../Components/Testominal.jsx';
+import Events from '../Components/Events.jsx';
+import Brands from '../Components/Brands.jsx';
+
+
 // import About from '../Components/About';
 
 
@@ -10,8 +15,12 @@ const Home = () => {
     <div>
       
       {/* <About/> */}
+    
       <Course/>
-      <Admission/>
+      <Banner/>
+      <Testominal/>
+      <Events/>
+      <Brands/>
     </div>
   )
 }

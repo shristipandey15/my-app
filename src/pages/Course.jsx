@@ -24,7 +24,7 @@ const Course = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
-      <h2 className="text-lg font-bold text-[#9F162E] text-center mb-2 uppercase tracking-wider">
+      <h2 className="text-lg font-bold text-[#E8B500] text-center mb-2 uppercase tracking-wider">
         Our Courses
       </h2>
       <h1 className="text-4xl md:text-5xl font-semibold text-[#00336F] text-center mb-6">
@@ -35,19 +35,36 @@ const Course = () => {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-        {courses.map((course) => (
-          <div
-            key={course.id}
-            className="p-6 bg-white border border-gray-200 shadow-sm rounded-2xl hover:shadow-lg transition duration-300"
-          >
-            <div className="text-[#00387A] text-4xl font-extrabold mb-2">{course.id}.</div>
-            <h3 className="text-2xl font-semibold text-[#00387A] mb-3">{course.title}</h3>
-            <p className="text-gray-600 mb-6">{course.description}</p>
-            <button className="bg-[#9F162E] text-white px-6 py-2 rounded-full hover:bg-[#7c1124] transition duration-300">
-              Know More
-            </button>
-          </div>
-        ))}
+        {courses.map((course, index) => {
+          const isMiddle = index === 1;
+          return (
+            <div
+              key={course.id}
+              className={`p-6 border border-gray-200 shadow-sm rounded-2xl hover:shadow-lg transition duration-300 ${
+                isMiddle ? 'bg-[#00336F]' : 'bg-white'
+              }`}
+            >
+              <div className={`${isMiddle ? 'text-white' : 'text-[#00387A]'} text-4xl font-extrabold mb-2`}>
+                {course.id}.
+              </div>
+              <h3 className={`${isMiddle ? 'text-white' : 'text-[#00387A]'} text-2xl font-semibold mb-3`}>
+                {course.title}
+              </h3>
+              <p className={`${isMiddle ? 'text-white' : 'text-gray-600'} mb-6`}>
+                {course.description}
+              </p>
+              <button
+                className={`font-semibold px-6 py-2 rounded-full border transition duration-300 ${
+                  isMiddle
+                    ? 'border-white text-white hover:bg-white hover:text-[#00336F]'
+                    : 'border-[#00336F] text-[#00336F] hover:bg-[#00336F] hover:text-white'
+                }`}
+              >
+                Know More
+              </button>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
