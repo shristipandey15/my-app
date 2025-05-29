@@ -3,6 +3,7 @@ import profileImg from '../assets/about6.png';
 import graduation from '../assets/graduation.png';
 import TeamSlider from './TeamSlider';
 import CertificationSection from './CertificationSection';
+import { FaLaptopCode, FaUsers, FaGraduationCap } from 'react-icons/fa';
 
 
 const About = () => {
@@ -34,6 +35,21 @@ const About = () => {
           <p className="text-gray-700 mb-4">
             Students choose our college for the comprehensive education, supportive environment, and abundant opportunities we provide. We are dedicated to helping each student achieve their academic goals and prepare for a successful and fulfilling career.
           </p>
+         
+         <div className="flex justify-center md:justify-start space-x-8 mt-6 text-[#00387A]">
+    <div className="flex flex-col items-center">
+      <FaLaptopCode size={40} />
+      <span className="mt-2 text-sm font-semibold">Tech Focus</span>
+    </div>
+    <div className="flex flex-col items-center">
+      <FaUsers size={40} />
+      <span className="mt-2 text-sm font-semibold">Community</span>
+    </div>
+    <div className="flex flex-col items-center">
+      <FaGraduationCap size={40} />
+      <span className="mt-2 text-sm font-semibold">Success</span>
+    </div>
+  </div>
 
         </div>
       </div>

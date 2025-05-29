@@ -14,6 +14,7 @@ import Contact from './pages/Contact.jsx';
 import ProjectHub from './pages/ProjectHub.jsx';
 import EventDetails from './Components/EventDetails.jsx';
 import Events from './Components/Events.jsx';
+import CourseDetail from './pages/CourseDetails.jsx';
 
 function App() {
   const location = useLocation();
@@ -31,12 +32,15 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/course" element={<Course />} />
+        <Route path="/course/:id" element={<CourseDetail />} />
         <Route path="/student-life" element={<StudentLife />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/projecthub" element={<ProjectHub />} />
         <Route path="/events" element={<Events/>} />
         <Route path="/event/:id" element={<EventDetails/>} />
+        
+     
         <Route />
       </Routes>
 

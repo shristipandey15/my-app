@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Course = () => {
   const courses = [
@@ -21,6 +22,13 @@ const Course = () => {
         'This course offers students a pathway to acquire in-depth knowledge and skills in the field of information technology for a successful career in the IT industry.',
     },
   ];
+
+  const generatePath = (title) =>
+    `/course/${title
+      .toLowerCase()
+      .replace(/\s+/g, '-')        
+      .replace(/\(.*?\)/g, '')     
+      .replace(/\./g, '')}`;       
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
@@ -53,15 +61,16 @@ const Course = () => {
               <p className={`${isMiddle ? 'text-white' : 'text-gray-600'} mb-6`}>
                 {course.description}
               </p>
-              <button
-                className={`font-semibold px-6 py-2 rounded-full border transition duration-300 ${
+              <Link
+                to={generatePath(course.title)}
+                className={`inline-block font-semibold px-6 py-2 rounded-full border transition duration-300 ${
                   isMiddle
                     ? 'border-white text-white hover:bg-white hover:text-[#00336F]'
                     : 'border-[#00336F] text-[#00336F] hover:bg-[#00336F] hover:text-white'
                 }`}
               >
                 Know More
-              </button>
+              </Link>
             </div>
           );
         })}
